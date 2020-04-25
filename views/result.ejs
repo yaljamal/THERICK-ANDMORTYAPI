@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%books.forEach(val=>{%>
+        <div>
+            <h2>
+                <%=val.title%>
+            </h2>
+            <img src="<%=val.smallThumbnail%>" alt="">
+            <h2>
+                <%=val.authors%>
+            </h2>
+            <p>
+                <%=val.description%>
+            </p>
+        </div>
+        <form action="/add" method="post">
+            <input type="text" name="title" value="<%=val.title%>">
+            <input type="text" name="smallThumbnail" value="<%=val.smallThumbnail%>">
+            <input type="text" name="authors" value="<%=val.authors%>">
+            <input type="text" name="description" value=" <%=val.description%>">
+            <button>Add to fav</button>
+        </form>
+
+
+        <%})%>
+</body>
+
+</html>
